@@ -20,7 +20,8 @@ function App() {
   const scale1 = useTransform(scrollYProgress, [0, 1], [1, 0.9])
   const scale2 = useTransform(scrollYProgress, [0.33, 1], [1, 0.9])
 
-  const blur1 = useTransform(scrollYProgress, [0, 1], [0, 20])
+  const filter1 = useTransform(scrollYProgress, v => `blur(${v * 20}px)`)
+  const filter2 = useTransform(scrollYProgress, v => `blur(${Math.max(0, (v - 0.33) * 20)}px)`)
 
 
   return (
@@ -36,10 +37,10 @@ function App() {
             className="h-3/4 w-3/4 bg-red-500"
             style={{
               scale: scale1,
-              filter: `blur(${blur1}px)`
+              filter: filter1
             }}
           >
-            <h1>Slide1</h1>
+            <motion.h1 style={{ filter: filter1 }}>Slide1</motion.h1>
           </motion.div>
         </div>
 
@@ -48,8 +49,7 @@ function App() {
             className="h-3/4 w-3/4 bg-green-500"
             style={{
               scale: scale2,
-              filter: `blur(10px)`,
-
+              filter: filter2
             }}
           />
         </div>
