@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('/RobotoSerif-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Serif';
+  src: url('/RobotoSerif-SemiBoldItalic.woff2') format('woff2');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+   --color-spt-yellow: #FFBC00;
+   --font-roboto-serif: 'Roboto Serif', serif;
+  }
