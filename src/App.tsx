@@ -1,5 +1,4 @@
-import { useRef, forwardRef, useEffect, useState } from 'react'
-import { motion, useScroll, useTransform } from "framer-motion"
+import { useState } from 'react'
 import { VideoPopup } from './components/VideoPopup'
 import { VideoBackground } from './components/VideoBackground'
 
